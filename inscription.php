@@ -6,21 +6,21 @@ $messages= [];
 $prenom = null;
 $nom = null;
 $email = null;
-$password = null;
-$check_password = null;
+$mdp = null;
+$check_mdp = null;
  
 //Empty vérifie si la variable existe 	mais elle doit être vide, ! devant un booléen l'inverse.
 if(!empty($_POST))
 	{
   	//Isset vérifie qu'une ou plusieurs variables existe et ne sont pas null/false. 
-    if(isset($_POST["prenom"], $_POST["nom"], $_POST["email"], $_POST["password"], $_POST["check_password"]))
+    if(isset($_POST["prenom"], $_POST["nom"], $_POST["email"], $_POST["mdp"], $_POST["check_mdp"]))
     	{
      	//Récupération des valeurs, ça permet de mettre à jour les variables par défaut et réafficher le formulaire avec les bonnes valeurs, attention à TOUJOURS filtrer ce qui vient d'un utilisateur pour éviter des failles.
     	$prenom = $_POST['prenom'];
     	$nom = $_POST['nom'];
     	$email = $_POST['email'];
-	    $password = $_POST['password'];
-	    $check_password = $_POST['check_password'];
+	    $password = $_POST['mdp'];
+	    $check_password = $_POST['check_mdp'];
  
     	//Test des variables.
   		//Si pas alphanumérique ou si vide : erreur.
@@ -35,30 +35,30 @@ if(!empty($_POST))
     	    $messages[] = "Erreur email (mauvais format).";
  		
  		//Force un minimum de 8 caractères.
-    	if(mb_strlen($password) < 8)
+    	if(mb_strlen($mdp) < 8)
     	    $messages[] = "Erreur mot de passe (8 caractères minimum).";
 
-    	if(mb_strlen($check_password) < 8)
+    	if(mb_strlen($check_mdp) < 8)
     	    $messages[] = "Erreur vérification du mot de passe (8 caractères minimum).";
 
     	//Vérifie que les deux mots de passe concordent.
-    	if($password != $check_password)
+    	if($mdp != $check_mdp)
     		$messages[] = "Les deux mots de passe sont différents.";
  
     	//Check fini, si l'array $message est vide, aucun problème, sinon j'en ai une ou plusieurs.
     	if(count($messages) === 0)
     		{
-    	    $password = sha1($password);
+    	    $mdp = sha1($mdp);
     
 			try
                 {
-                $register = $bdd->prepare("INSERT INTO membres (prenom, nom, email, password) VALUES (:prenom, :nom, :email, :password)");
+                $register = $bdd->prepare("INSERT INTO membres (prenom, nom, email, mdp) VALUES (:prenom, :nom, :email, :mdp)");
 
                 $register->execute([
                     ":prenom" => $prenom,
                     ":nom" => $nom,
                     ":email" => $email,
-                    ":password" => $password
+                    ":mdp" => $mdp
                     ]);
  
                 $messages = 'Inscription réussie !';
@@ -93,34 +93,40 @@ if(!empty($_POST))
 	<body>
 		<div id="wrapper">
 			<?php include("header.php"); ?>
+
+			<h3 class="register-title">INFORMATIONS PERSONNELLES</h3>
 			
 			<form method="post" class="register">
 
-				<div class="register-top-grid">
-					<h3 class="register-title">INFORMATIONS PERSONNELLES</h3>
+				<div class="register-left-grid">
 					<div>
-						<label for="prenom">Prénom*</label>
+						<label for="prenom">Prénom *</label>
 						<input type="text" id="prenom" name="prenom" value="<?= escape($prenom); ?>"> 
 					</div>
+
 					<div>
-						<label for="nom">Nom*</label>
+						<label for="nom">Nom *</label>
 						<input type="text" id="nom" name="nom" value="<?= escape($nom); ?>"> 
 					</div>
+
 					<div>
-						<label for="email">Email*</label>
+						<label for="email">Email *</label>
 						<input type="text" id="email" name="email" value="<?= escape($email); ?>"> 
 					</div>
 				</div>
 
-				<div class="register-bottom-grid">
+				<div class="register-right-grid">
 					<div>
-						<label for="password">Mot de passe*</label>
-						<input type="password" id="password" name="password" value="<?= escape($password); ?>">
+						<label for="mdp">Mot de passe *</label>
+						<input type="password" id="mdp" name="mdp" value="<?= escape($mdp); ?>">
+					</div>	
 
-						<label for="check_password">Confirmez votre mot de passe*</label>
-						<input type="password" id="check_password" name="check_password" value="<?= escape($check_password); ?>">
+					<div>
+						<label for="check_mdp">Confirmez votre mot de passe *</label>
+						<input type="password" id="check_mdp" name="check_mdp" value="<?= escape($check_mdp); ?>">
 					</div>
 				</div>
+
 				<input type="submit" class="submit_button" value="Envoyer">
 			</form>	
 
@@ -131,7 +137,7 @@ if(!empty($_POST))
 		</div>
 		
 		<div id="footer">
-		    <?php //include("footer.php"); ?>
+		    <?php include("footer.php"); ?>
 		</div>
 
 	</body>
