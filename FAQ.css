@@ -1,0 +1,162 @@
+@import url(http://fonts.googleapis.com/css?family=Bad+Script);
+body {
+	margin: 0;
+	padding: 0;
+	background: #E5E6DD;
+	font-family: 'Oxygen', sans-serif;
+	font-size: 13px;
+	color: #8A8985;
+}
+h1
+{
+	text-transform: uppercase;
+	font-weight: 300;
+	color: #7D7764;
+	text-align: center;
+	font-size: 2.2em;
+}
+h2
+{
+	text-align: left;
+	text-transform: uppercase;
+	font-weight: normal;
+	font-size: 2em;
+	margin-left: 1em;
+	text-decoration: underline;
+}
+h3
+{
+}
+#aide{
+	width: 90%
+	margin: 10px auto;
+	background-color: #fff;
+	line-height: 
+}
+#titre
+{
+	padding: .5em
+	border-bottom: 1px solid gray;
+}
+#titre h1
+{
+	padding: 0;
+	margin: 0;
+}
+#leftnav
+{
+	float: left;
+	width: 190px;
+	margin: 0.5em;
+	padding: 1em;
+}
+#questions
+{
+	margin-left: 250px;
+	padding: 1em;
+	max-width: 70em;
+}
+#footer {
+	height: 100px;
+	margin: 0 auto;
+	padding: 50px 0px 0px 0px;
+}
+
+#footer p {
+	margin: 0;
+	padding-top: 10px;
+	line-height: normal;
+	text-align: center;
+	text-shadow: 1px 1px 0px #FFFFFF;
+	color: #909090;
+}
+
+#footer a {
+	text-decoration: underline;
+	color: #909090;
+}
+
+#footer a:hover {
+	text-decoration: none;
+	color: #383838;
+}
+
+.box1 {
+	overflow: hidden;
+	height: 300px;
+	background: url(images/img04.jpg) no-repeat center bottom;
+}
+
+.list-style1 {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+.list-style1 li {
+	padding: 7px 0px 7px 0px;
+	border-top: 1px dashed #E7E2DC;
+}
+
+.list-style1 .first {
+	padding-top: 0px;
+	border-top: none;
+}
+
+.list-style2 {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+.list-style2 li {
+	padding: 7px 0px 7px 0px;
+}
+
+.list-style2 a {
+	color: #8A8985;
+}
+
+.list-style2 a:hover {
+	text-decoration: underline;
+}
+
+.list-style2 .first {
+	padding-top: 0px;
+	border-top: none;
+	background: none;
+}
+
+#footer-bg {
+	overflow: hidden;
+	padding: 70px 0px;
+	background: #3C342E;
+	border-top: 10px solid #E5E6DD;
+}
+
+#footer-content {
+}
+
+#footer-content h2 {
+	margin: 0px 0px 20px 0px;
+	padding: 0px 0px 10px 0px;
+	border-bottom: 2px solid #DE5635;
+	font-size: 22px;
+	color: #FFFFFF;
+}
+
+#column1 {
+	float: left;
+	width: 384px;
+	margin-right: 20px;
+}
+
+#column2 {
+	float: left;
+	width: 384px;
+}
+
+#column3 {
+	float: right;
+	width: 384px;
+}
