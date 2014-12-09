@@ -15,12 +15,16 @@
 		<div id="wrapper">
 			<?php include("header.php"); ?>
 	
+	<section id="banner">
 			<div id="logo" class="container">
-		
+				
 				<h1>Home Switch Home</h1>
 				<p>Le site d'échange de logement entre particuliers</p>
-	
+
+				<a href="#" class="button_transparent"><p><div id="button_transparent">Comment ça marche ?</div></p></a>
+				
 			</div>
+	</section>		
 
 			<div id="page" class="container">
 		

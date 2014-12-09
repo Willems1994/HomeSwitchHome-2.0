@@ -70,6 +70,7 @@ a:hover {
 	letter-spacing: -6px;
 	text-transform: lowercase;
 	font-size: 100px;
+	color: #FFFFFF;
 }
 
 #logo p {
@@ -77,7 +78,7 @@ a:hover {
 	padding: 0px 0px 0px 5px;
 	font-size: 20px;
 	font-weight: 300;
-	color: #696969;
+	color: #FFFFFF;
 }
 
 #logo p a {
@@ -98,6 +99,9 @@ a:hover {
 	height: 52px;
 	margin-bottom: 2em;
 	background: #000000;
+	position: fixed;
+	width: 100%;
+	z-index: 3;
 }
 
 #menu {
@@ -138,92 +142,55 @@ a:hover {
 	color: #000000;
 }
 
-#menu .current_page_item a {
+/* Index */
+
+#banner {
+	background-image: url("images/overlay.png"), url("images/banner.jpg");
+	background-position: top, left, center, center;
+	background-repeat: repeat, no-repeat;
+	background-size: auto, cover;
+	padding: 12em 0 20em 0;
+	margin-top: -2%;
+	background-attachment: scroll, fixed;
 }
 
-/* Page */
-
-#page {
-		overflow: hidden;
-		padding: 20px 20px 40px 20px;
-	}
-
-/* Content */
-
-#content {
-	float: left;
-	width: 752px;
-	padding: 0px 0px 0px 0px;
-}
-
-.post {
-	overflow: hidden;
-}
-
-.post .title {
-	margin: 0px 0px 30px 0px;
-	padding: 0px 0px 10px 0px;
-	border-bottom: 3px solid #E0E1D6;
-	text-shadow: 1px 1px 0px #FFFFFF;
-	font-size: 26px;
-	color: #373737;
-}
-
-.post .title a {
-	border: none;
-	color: #373737;
-}
-
-.post .meta {
-	margin-bottom: 30px;
-	padding: 0px;
-	text-align: left;
-	font-size: 16px;
-}
-
-.post .meta .date {
-	float: left;
-}
-
-.post .meta .posted {
-	float: right;
-}
-
-.post .meta a {
-}
-
-.post .entry {
-	padding: 0px 0px 20px 0px;
-	padding-bottom: 20px;
-	text-align: justify;
-}
-
-.links {
-	padding-top: 20px;
-	margin-bottom: 30px;
-}
-
-.more {
-	display: block;
-	float: left;
-	width: 88px;
-	height: 25px;
-	padding: 2px 0px 0px 0px;
-	margin-right: 10px;
-	background: url(images/img08.jpg) no-repeat left top;
+#button_transparent {
+	/*color: #FFFFFF;
 	text-align: center;
+	border: 1px solid;*/
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	-o-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+	-moz-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+	-webkit-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+	-o-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+	-ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+	transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+	background: none;
+	border: solid 1px;
 	color: #FFFFFF;
+	cursor: pointer;
+	display: inline-block;
+	font-weight: 900;
+	letter-spacing: 2px;
+	min-width: 18em;
+	padding: 0 0.75em;
+	line-height: 3.75em;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;	
+	left: 39.5%;	
+	font: 2.8em;
 }
 
-.comments {
-	display: block;
-	float: left;
-	width: 88px;
-	height: 25px;
-	padding: 2px 0px 0px 0px;
-	background: url(images/img08.jpg) no-repeat left top;
-	text-align: center;
-	color: #FFFFFF;
+#button_transparent:hover {
+	background: rgba(188, 202, 206, 0.15);
+	border-color: #FFFFFF;
 }
 
 /* Footer */
@@ -243,6 +210,40 @@ a:hover {
 #footer a:hover {
 	text-decoration: none;
 	color: #383838;
+}
+
+#aide {
+	width: 90%;
+	margin: 10px auto;
+	background-color: #fff;
+	line-height: 
+}
+
+#titre {
+	padding: .5em;
+	border-bottom: 1px solid gray;
+}
+
+#titre h1 {
+	padding: 0;
+	margin: 0;
+}
+
+#leftnav {
+	float: left;
+	width: 190px;
+	margin: 0.5em;
+	padding: 1em;
+}
+
+#questions {
+	margin-left: 250px;
+	padding: 1em;
+	max-width: 70em;
+}
+
+#aide p, h3 {
+	margin-left: 50px;
 }
 
 /* Three Column Content */
@@ -294,27 +295,19 @@ a:hover {
 	color: #FFFFFF;
 }
 
-
-.divider {
-	overflow: hidden;
-	height: 50px;
-	background: url(images/img04.png) no-repeat center top;
-}
-
-.button
-{
+.button {
 	display: inline-block;
 	margin: 1em 0em;
 	background: #000;
 	padding: 1em 2em;
 	color: #FFFFFF;
 }
+
 #logo2 {
 margin-bottom: -12px;
 }
 
-
-
+/* Page d'inscription */
 
 .register {
 	position: relative;
@@ -389,9 +382,11 @@ margin-bottom: -12px;
 	left: 45%;
 	bottom: 100px;
 }
+
 .register-title{
 	text-align: center;
 }
+
 .register_errors{
 	text-align: center;
 	display: inline-block;
@@ -400,24 +395,16 @@ margin-bottom: -12px;
 	left: 700px;
 }
 
-
-
-
-
-
-
-
-
-
+/* Page de connexion */
 
 .login {
-  margin: 0 auto;
-  padding: 20px;
-  width: 310px;
-  background: white;
+    margin: 0 auto;
+    padding: 20px;
+    width: 310px;
+    background: white;
 }
 .login input[type=text], .login input[type=password] {
-  width: 278px;
+    width: 278px;
 }
 .login h3 {
 	text-align: center;
@@ -427,8 +414,8 @@ margin-bottom: -12px;
 	left: 48px;
 }
 #remember_me {
-  float: left;
-  line-height: 31px;
+    float: left;
+    line-height: 31px;
 }
 .login_submit_button{
 	font-family: "Oxygen",sans-serif;
@@ -442,13 +429,13 @@ margin-bottom: -12px;
 	top: 5px;
 }
 .login-help {
-  margin: 20px 0;
-  font-size: 11px;
-  text-align: center;
+    margin: 20px 0;
+    font-size: 11px;
+    text-align: center;
 }
 
 .login-help a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 .login_errors{
 	text-align: center;
@@ -457,6 +444,47 @@ margin-bottom: -12px;
 	position: relative;
 	left: 700px;
 }
+
+/* Profil*/
+
+#avatar {
+	float: left;
+	text-align: center;
+	width: 200px;
+	padding: 10px;
+	margin-left: 10%;
+	display: inline-block;
+}
+
+.avatarChange {
+	clear: both;
+}
+
+#avatar a {
+	text-decoration: none;
+	color: #909090;
+}
+
+#avatar a:hover {
+	text-decoration: none;
+	color: #383838;
+}
+
+.infosPerso {
+	margin-left: 25%;
+	margin-top: 20px;
+}
+
+#infosPersoTitre h1 {
+	display: inline-block;
+	clear: both;
+	text-align: center;
+	border-bottom: 1px solid gray;
+	margin-bottom: 10px;
+	width: 70%;
+}
+
+/* Others */
 
 :-moz-placeholder {
   color: #c9c9c9 !important;
@@ -508,39 +536,4 @@ input[type=submit]:active {
 
 .lt-ie9 input[type=text], .lt-ie9 input[type=password] {
   line-height: 34px;
-}
-
-
-#aide {
-	width: 90%
-	margin: 10px auto;
-	background-color: #fff;
-	line-height: 
-}
-
-#titre {
-	padding: .5em
-	border-bottom: 1px solid gray;
-}
-
-#titre h1 {
-	padding: 0;
-	margin: 0;
-}
-
-#leftnav {
-	float: left;
-	width: 190px;
-	margin: 0.5em;
-	padding: 1em;
-}
-
-#questions {
-	margin-left: 250px;
-	padding: 1em;
-	max-width: 70em;
-}
-
-#aide p, h3 {
-	margin-left: 50px;
 }

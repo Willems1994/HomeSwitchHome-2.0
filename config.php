@@ -8,7 +8,7 @@
 
 	function escape($text)
 		{
-		return htmlspecialchars($text, ENT_QUOTES); 
+		return htmlspecialchars($text, ENT_QUOTES);
 		}
 
 /*----------------------------------------------------------------------------------------------------------------------------*/
@@ -35,6 +35,6 @@
 
 	function isConnected()
 		{ 
-		return isset($_SESSION["logged"]) && $_SESSION["logged"]; 
+		return isset($_SESSION["userID"]) && $_SESSION["userID"];
 		}
 ?>
