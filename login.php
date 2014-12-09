@@ -4,7 +4,7 @@ $messages= [];
 
 $email = null;
 $mdp = null;
-$bdd_email = null;
+$user_info = null;
 $user = null;
 
 if(!empty($_POST)) {
@@ -18,13 +18,13 @@ if(!empty($_POST)) {
         if(mb_strlen($mdp) < 8)
             $messages[] = "Erreur mot de passe (8 caractères minimum).";
 
-        $bdd_email = $bdd -> prepare('SELECT id, email, mdp FROM membres WHERE email=:email');
-        $bdd_email -> execute([":email" => "$email"]);
+        $user_info = $bdd -> prepare('SELECT id, email, mdp FROM membres WHERE email=:email');
+        $user_info -> execute([":email" => "$email"]);
 
-        if($bdd_email -> rowCount() != 1)
+        if($user_info -> rowCount() != 1)
             $messages[] = "Cet email n'est pas inscrit.";
 
-        $user = $bdd_email -> fetch(); 
+        $user = $user_info -> fetch(); 
         $mdp = sha1($mdp);
 
         if($mdp != $user["mdp"])
