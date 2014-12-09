@@ -537,3 +537,29 @@ input[type=submit]:active {
 .lt-ie9 input[type=text], .lt-ie9 input[type=password] {
   line-height: 34px;
 }
+#apropos {
+	margin-left: 250px;
+	padding: 1em;
+	max-width: 70em;
+}
+#fondateurs{
+	margin-left: 250px;
+	padding: 1em;
+	max-width: 70em;	
+}
+#img {
+	width :100px;
+	height :100px;
+}
+#fondateurs ul {
+	margin: 0;
+	padding: 0px 0px 0px 0px;
+	list-style: none;
+	line-height: normal;
+	text-align: center;
+}
+
+#fondateurs li {
+	margin-left: 3em;
+	display: inline-block;
+}
